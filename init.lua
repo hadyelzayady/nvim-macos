@@ -1,0 +1,6 @@
+require "options"
+require "plugins"
+require "plugin-config"
+require "lsp.settings"
+require "theme"
+require "keymaps"

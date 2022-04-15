@@ -1,0 +1,5 @@
+require "plugin-config.treesetter"
+require "plugin-config.bufferline"
+require "plugin-config.whichkey"
+require "plugin-config.whichkey"
+require "plugin-config.lualine"
