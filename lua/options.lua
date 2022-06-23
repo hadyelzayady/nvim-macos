@@ -16,16 +16,23 @@ vim.opt.undofile = true                         -- enable persistent undo
 vim.opt.writebackup = false                     -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.opt.expandtab = true                        -- convert tabs to spaces
 vim.opt.shiftwidth = 4                          -- the number of spaces inserted for each indentation
-vim.opt.tabstop = 4                             -- insert 2 spaces for a tab
-vim.opt.cursorline = false                       -- highlight the current line
+vim.opt.tabstop = 4                             -- insert 4 spaces for a tab
+vim.opt.cursorline = true                       -- highlight the current line
 vim.opt.number = true                           -- set numbered lines
 vim.opt.relativenumber = true                  -- set relative numbered lines
-vim.opt.numberwidth = 4                         -- set number column width to 2 {default 4}
+vim.opt.numberwidth = 2                         -- set number column width to 2 {default 4}
 vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
 vim.opt.wrap = true                            -- soft wrap
 vim.opt.linebreak=true                         -- do not break word when wrapping
-vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
+vim.opt.guifont = "JetBrains Mono:h17"               -- the font used in graphical neovim applications
 vim.opt.termguicolors = true
+vim.opt.list = true
+vim.opt.listchars = vim.opt.listchars + {
+  eol = '⤶',
+  space = '-',
+  trail = '·',
+    tab = '|·'
+}
 --------------- Start useful when not using softwrap
 --vim.opt.scrolloff = 8,                           -- is one of my fav
 --vim.opt.sidescrolloff = 8,
