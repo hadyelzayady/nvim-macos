@@ -39,6 +39,7 @@ return require('packer').startup(function()
         'nvim-telescope/telescope.nvim',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
+    use { "nvim-telescope/telescope-file-browser.nvim" }
     use {
         -- file explorer
         'kyazdani42/nvim-tree.lua',
@@ -66,6 +67,17 @@ return require('packer').startup(function()
     }
 
     use "Pocco81/AutoSave.nvim"
+
+    -- Start Screen
+    use {
+        'goolord/alpha-nvim',
+        requires = { 'kyazdani42/nvim-web-devicons' },
+    }
+
+    use 'Shatur/neovim-session-manager'
+
+    use 'notjedi/nvim-rooter.lua'
+    use "ahmedkhalf/project.nvim"
     --  -- Simple plugins can be specified as strings
     --  use '9mm/vim-closer'
     --

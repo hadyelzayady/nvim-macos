@@ -79,6 +79,7 @@ local opts = {
 }
 
 local mappings = {
+  ["a"] = { "<cmd>Alpha<cr>", "Start Screen" },
   ["e"] = { "<cmd>NvimTreeFindFileToggle<cr>", "Explorer Find File" },
   ["E"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["w"] = { "<cmd>w!<CR>", "Save" },
@@ -121,7 +122,7 @@ local mappings = {
       "<cmd>TroubleToggle workspace_diagnostics<cr>",
       "Workspace Diagnostics",
     },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<cr>", "Format" },
+    f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
     F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
     j = {
       "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
