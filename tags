@@ -1,0 +1,46 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/Users/hady/.config/nvim/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$schema	.luarc.json	/^    "$schema": "https:\/\/raw.githubusercontent.com\/sumneko\/vscode-lua\/master\/setting\/schem/;"	s
+0	.luarc.json	/^        "use",$/;"	s	array:Lua.diagnostics.globals
+1	.luarc.json	/^        "vim"$/;"	s	array:Lua.diagnostics.globals
+BS	lua/plugin-config/autopairs.lua	/^MUtils.BS = function()$/;"	f	unknown:MUtils
+CR	lua/plugin-config/autopairs.lua	/^MUtils.CR = function()$/;"	f	unknown:MUtils
+Lua.diagnostics.globals	.luarc.json	/^    "Lua.diagnostics.globals": [$/;"	a
+["ctrl-y"]	lua/plugin-config/fzf.lua	/^            ["ctrl-y"]  = function(selected) print(selected[1]) end,$/;"	f
+_HTOP_TOGGLE	lua/plugin-config/toggleterm.lua	/^function _HTOP_TOGGLE()$/;"	f
+_LAZYGIT_TOGGLE	lua/plugin-config/toggleterm.lua	/^function _LAZYGIT_TOGGLE()$/;"	f
+_NCDU_TOGGLE	lua/plugin-config/toggleterm.lua	/^function _NCDU_TOGGLE()$/;"	f
+_NODE_TOGGLE	lua/plugin-config/toggleterm.lua	/^function _NODE_TOGGLE()$/;"	f
+_PYTHON_TOGGLE	lua/plugin-config/toggleterm.lua	/^function _PYTHON_TOGGLE()$/;"	f
+disable_format_on_save	lua/lsp/handlers.lua	/^function M.disable_format_on_save()$/;"	f	unknown:M
+enable_format_on_save	lua/lsp/handlers.lua	/^function M.enable_format_on_save()$/;"	f	unknown:M
+error_msg	plugin/packer_compiled.lua	/^local no_errors, error_msg = pcall(function()$/;"	f
+filter	lua/lsp/handlers.lua	/^      autocmd BufWritePre * lua vim.lsp.buf.formatting({filter = function(client) return client./;"	f
+filter	lua/lsp/null-ls.lua	/^        filter = function(client)$/;"	f
+fmt	lua/plugin-config/lualine.lua	/^	fmt = function(str)$/;"	f
+footer	lua/plugin-config/start-screen.lua	/^local function footer()$/;"	f
+hide_in_width	lua/plugin-config/lualine.lua	/^local hide_in_width = function()$/;"	f
+lsp_formatting	lua/lsp/null-ls.lua	/^local lsp_formatting = function(bufnr)$/;"	f
+on_attach	lua/lsp/lspconfig.lua	/^local on_attach = function(client, bufnr)$/;"	f
+on_create	lua/plugin-config/fzf.lua	/^        on_create  = function()$/;"	f
+post_reset_cb	lua/plugin-config/fzf.lua	/^        post_reset_cb = function()$/;"	f
+progress	lua/plugin-config/lualine.lua	/^local progress = function()$/;"	f
+remove_augroup	lua/lsp/handlers.lua	/^function M.remove_augroup(name)$/;"	f	unknown:M
+save_profiles	plugin/packer_compiled.lua	/^local function save_profiles(threshold)$/;"	f
+set_terminal_keymaps	lua/plugin-config/toggleterm.lua	/^function _G.set_terminal_keymaps()$/;"	f	unknown:_G
+spaces	lua/plugin-config/lualine.lua	/^local spaces = function()$/;"	f
+symbol_fmt	lua/plugin-config/fzf.lua	/^        symbol_fmt       = function(s) return "[" .. s .. "]" end,$/;"	f
+t	lua/plugin-config/whichkey.lua	/^    t = { '<cmd>lua require("user.functions").toggle_diagnostics()<cr>', "Toggle Diagnostics" },$/;"	f
+time	plugin/packer_compiled.lua	/^    time = function(chunk, start) end$/;"	f
+time	plugin/packer_compiled.lua	/^    time = function(chunk, start)$/;"	f
+toggle_format_on_save	lua/lsp/handlers.lua	/^function M.toggle_format_on_save()$/;"	f	unknown:M
+try_loadstring	plugin/packer_compiled.lua	/^local function try_loadstring(s, component, name)$/;"	f

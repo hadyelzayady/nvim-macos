@@ -78,6 +78,13 @@ return require('packer').startup(function()
 
     use 'notjedi/nvim-rooter.lua'
     use "ahmedkhalf/project.nvim"
+    use {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" }
+        }
+    }
     --  -- Simple plugins can be specified as strings
     --  use '9mm/vim-closer'
     --
