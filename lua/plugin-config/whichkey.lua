@@ -209,10 +209,17 @@ local mappings = {
         h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
     },
-
     r = {
         name = 'Refactor',
         i = { "<Cmd>lua require('refactoring').refactor('Extract Function')<CR>", "Unser Cursor" }
+
+    },
+    b= {
+        name = 'Bufferline',
+        p = { "<Cmd>BufferLinePick<CR>", "Pick Buffer" },
+        P = { "<Cmd>BufferLinePickClose<CR>", "Close Pick Buffer" },
+        l = { "<Cmd>BufferLineCloseLeft<CR>", "Close Left" },
+        r = { "<Cmd>BufferLineCloseRight<CR>", "Close Right" }
 
     }
 }
