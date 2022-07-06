@@ -366,6 +366,7 @@ require 'fzf-lua'.setup {
         cwd_only                = true,
         stat_file               = true, -- verify files exist on disk
         include_current_session = true, -- include bufs from current session
+        path_shorten = 4
     },
     buffers             = {
         prompt        = 'Buffers❯ ',

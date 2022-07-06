@@ -180,7 +180,7 @@ local mappings = {
     s = {
         name = "Search",
         f = { "<cmd>FzfLua files<cr>", "Files" },
-        r = { "<cmd>FzfLua oldfiles<cr>", "Open Recent File" },
+        r = { "<cmd>lua require'fzf-lua'.oldfiles({ cwd = vim.fn.getcwd() })<cr>", "Open Recent File" },
         b = { "<cmd>FzfLua buffers<cr>", "Buffers" },
         t = { "<cmd>FzfLua grep_last<cr>", "Text" },
         h = { "<cmd>FzfLua help_tags<cr>", "Find Help" },
