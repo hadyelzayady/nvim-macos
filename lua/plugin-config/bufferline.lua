@@ -30,9 +30,15 @@ require("bufferline").setup {
         -- tab_size = 18,
         diagnostics = "nvim_lsp",
         -- diagnostics_update_in_insert = false,
-        -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
-        --   return "("..count..")"
-        -- end,
+        diagnostics_indicator = function(count, level, diagnostics_dict, context)
+            local s = " "
+            for e, n in pairs(diagnostics_dict) do
+                local sym = e == "error" and " "
+                    or (e == "warning" and " " or "")
+                s = s .. n .. sym
+            end
+            return s
+        end,
         -- -- NOTE: this will be called a lot so don't do any heavy processing here
         -- custom_filter = function(buf_number, buf_numbers)
         --   -- filter out filetypes you don't want to see
@@ -62,7 +68,7 @@ require("bufferline").setup {
         -- show_buffer_default_icon = true | false, -- whether or not an unrecognised filetype should show a default icon
         -- show_close_icon = true | false,
         show_tab_indicators = true,
-         persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
+        persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
         -- -- can also be a table containing 2 custom separators
         -- -- [focused and unfocused]. eg: { '|', '|' }
         separator_style = "slant", --"slant" | "thick" | "thin" | { 'any', 'any' },

@@ -1,3 +1,3 @@
-require('navigator').setup({
-lsp_installer = true
-})
+-- require('navigator').setup({
+-- lsp_installer = true
+-- })
