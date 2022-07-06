@@ -214,12 +214,13 @@ local mappings = {
         i = { "<Cmd>lua require('refactoring').refactor('Extract Function')<CR>", "Unser Cursor" }
 
     },
-    b= {
+    b = {
         name = 'Bufferline',
-        p = { "<Cmd>BufferLinePick<CR>", "Pick Buffer" },
-        P = { "<Cmd>BufferLinePickClose<CR>", "Close Pick Buffer" },
+        j = { "<Cmd>BufferLinePick<CR>", "Pick Buffer" },
+        c = { "<Cmd>BufferLinePickClose<CR>", "Close Pick Buffer" },
         l = { "<Cmd>BufferLineCloseLeft<CR>", "Close Left" },
-        r = { "<Cmd>BufferLineCloseRight<CR>", "Close Right" }
+        r = { "<Cmd>BufferLineCloseRight<CR>", "Close Right" },
+        p = { "<Cmd>BufferLineTogglePin<CR>", "Pin Buffer" },
 
     }
 }

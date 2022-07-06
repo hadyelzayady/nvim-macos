@@ -27,12 +27,12 @@ vim.opt.linebreak=true                         -- do not break word when wrappin
 vim.opt.guifont = "JetBrains Mono:h17"               -- the font used in graphical neovim applications
 vim.opt.termguicolors = true
 vim.opt.list = true
-vim.opt.listchars = vim.opt.listchars + {
-  eol = '⤶',
-  space = '-',
-  trail = '·',
-    tab = '|·'
-}
+-- vim.opt.listchars = vim.opt.listchars + {
+--   eol = '⤶',
+--   space = '-',
+--   trail = '·',
+--     tab = '|·'
+-- }
 --------------- Start useful when not using softwrap
 --vim.opt.scrolloff = 8,                           -- is one of my fav
 --vim.opt.sidescrolloff = 8,

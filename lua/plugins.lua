@@ -55,6 +55,7 @@ return require('packer').startup(function()
     use 'terrortylor/nvim-comment'
 
     use 'tpope/vim-surround'
+    use 'tpope/vim-repeat'
 
     use { 'ibhagwan/fzf-lua',
         -- optional for icon support
@@ -79,12 +80,15 @@ return require('packer').startup(function()
     use 'notjedi/nvim-rooter.lua'
     use "ahmedkhalf/project.nvim"
     use {
-        "ThePrimeagen/refactoring.nvim",
-        requires = {
-            { "nvim-lua/plenary.nvim" },
-            { "nvim-treesitter/nvim-treesitter" }
-        }
+        'phaazon/hop.nvim',
+        branch = 'v1', -- optional but strongly recommended
+        config = function()
+            -- you can configure Hop the way you like here; see :h hop-config
+            require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+        end
     }
+    use "lukas-reineke/indent-blankline.nvim"
+    use 'simrat39/symbols-outline.nvim'
     --  -- Simple plugins can be specified as strings
     --  use '9mm/vim-closer'
     --
