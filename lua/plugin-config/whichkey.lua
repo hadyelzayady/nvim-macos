@@ -199,6 +199,12 @@ local mappings = {
         name = "Jump",
         m = { "<cmd>FzfLua marks<cr>", "Marks" },
         j = { "<cmd>FzfLua jumps<cr>", "Jumps" },
+        l = {"<cmd>HopLine<cr>",'Jump Line'},
+        L = {"<cmd>HopLineMW<cr>",'Jump Line (Visible Buffers)'},
+        w = {"<cmd>HopWord<cr>",'Jump Word'},
+        W = {"<cmd>HopWordMW<cr>",'Jump Word (Visible Buffers)'},
+        c = {"<cmd>HopChar1<cr>",'Jump Char1'},
+        C = {"<cmd>HopChar1MW<cr>",'Jump Char1 (Visible Buffers)'},
     },
 
     t = {
@@ -209,11 +215,6 @@ local mappings = {
         h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
         v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
     },
-    r = {
-        name = 'Refactor',
-        i = { "<Cmd>lua require('refactoring').refactor('Extract Function')<CR>", "Unser Cursor" }
-
-    },
     b = {
         name = 'Bufferline',
         j = { "<Cmd>BufferLinePick<CR>", "Pick Buffer" },
@@ -221,7 +222,6 @@ local mappings = {
         l = { "<Cmd>BufferLineCloseLeft<CR>", "Close Left" },
         r = { "<Cmd>BufferLineCloseRight<CR>", "Close Right" },
         p = { "<Cmd>BufferLineTogglePin<CR>", "Pin Buffer" },
-
     }
 }
 
