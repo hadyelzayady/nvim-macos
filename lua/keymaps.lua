@@ -36,12 +36,15 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- keymap("n", "<S-h>", ":bprevious<CR>", opts)
 keymap("n", "<S-l>", ":BufferLineCycleNext<CR>", opts)
 keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
-keymap("n", "<A-S>l", ":BufferLineMoveNext<CR>", opts)
-keymap("n", "<C-S>h", ":BufferLineMovePrev<CR>", opts)
+-- map alt+l and alt+h to move buffers right and left
+keymap("n", "Ò", ":BufferLineMoveNext<CR>", opts)
+keymap("n", "Ó", ":BufferLineMovePrev<CR>", opts)
 
 -- Move text up and down
-keymap("n", "<A-j>", "<Esc>:m .+1<CR>==gi", opts)
-keymap("n", "<A-k>", "<Esc>:m .-2<CR>==gi", opts)
+-- alt+ j
+keymap("n", "∆", "<Esc>:m .+1<CR>", opts) -- <Esc>:m .+1<CR>==gi -> move then go back to last insert position
+-- -- alt+k
+keymap("n", "˚", "<Esc>:m .-2<CR>", opts)
 
 -- Insert --
 -- Press jk fast to enter
@@ -53,16 +56,20 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
+-- alt+ j
+keymap("v", "∆", ":m .+1<CR>==", opts)
+-- alt+k
+keymap("v", "˚", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+-- alt+ j
+keymap("x", "∆", ":move '>+1<CR>gv-gv", opts)
+-- alt+k
+keymap("x", "˚", ":move '<-2<CR>gv-gv", opts)
 
 -- Terminal --
 -- Better terminal navigation
