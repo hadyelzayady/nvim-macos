@@ -486,8 +486,8 @@ require 'fzf-lua'.setup {
     lsp                 = {
         prompt_postfix   = '❯ ', -- will be appended to the LSP label
         -- to override use 'prompt' instead
-        cwd_only         = false, -- LSP/diagnostics for cwd only?
-        async_or_timeout = 5000, -- timeout(ms) or 'true' for async calls
+        cwd_only         = true, -- LSP/diagnostics for cwd only?
+        async_or_timeout = true, -- timeout(ms) or 'true' for async calls
         file_icons       = true,
         git_icons        = false,
         lsp_icons        = true,
