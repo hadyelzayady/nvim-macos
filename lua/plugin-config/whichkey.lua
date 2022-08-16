@@ -221,6 +221,7 @@ local mappings = {
         c = { "<Cmd>BufferLinePickClose<CR>", "Close Pick Buffer" },
         l = { "<Cmd>BufferLineCloseLeft<CR>", "Close Left" },
         r = { "<Cmd>BufferLineCloseRight<CR>", "Close Right" },
+        a = { "<Cmd>%bd<CR>", "Close All" },
         p = { "<Cmd>BufferLineTogglePin<CR>", "Pin Buffer" },
     }
 }
