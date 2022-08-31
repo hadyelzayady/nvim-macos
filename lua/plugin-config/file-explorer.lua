@@ -11,7 +11,7 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
     open_on_tab = false,
     sort_by = "name",
     update_cwd = true,
-    reload_on_bufenter = true,
+    reload_on_bufenter = false,
     respect_buf_cwd = false,
     view = {
         adaptive_size = true,
@@ -20,8 +20,8 @@ require 'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
         hide_root_folder = false,
         side = "left",
         preserve_window_proportions = false,
-        number = false,
-        relativenumber = false,
+        number = true,
+        relativenumber = true,
         signcolumn = "yes",
         mappings = {
             custom_only = false,

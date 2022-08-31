@@ -13,9 +13,11 @@ dashboard.section.header.val = {
     [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
 }
 dashboard.section.buttons.val = {
-    dashboard.button("f", "  Find file", ":FzfLua files <CR>"),
     dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
+    dashboard.button("f", "  Find file", ":FzfLua files <CR>"),
     dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
+    dashboard.button("l", "⏱   Last Session", ":SessionManager load_last_session<CR>"),
+    dashboard.button("s", "⏱ Sessions", ":SessionManager load_session<CR>"),
     dashboard.button("r", "  Recently used files", ":FzfLua oldfiles <CR>"),
     dashboard.button("t", "  Find text", ":FzfLua live_grep <CR>"),
     dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.lua <CR>"),

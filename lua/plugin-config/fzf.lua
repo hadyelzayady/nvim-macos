@@ -366,7 +366,7 @@ require 'fzf-lua'.setup {
         cwd_only                = true,
         stat_file               = true, -- verify files exist on disk
         include_current_session = true, -- include bufs from current session
-        path_shorten = 4
+        path_shorten            = 4
     },
     buffers             = {
         prompt        = 'Buffers❯ ',
@@ -535,3 +535,5 @@ require 'fzf-lua'.setup {
     -- 'EN SPACE' (U+2002), the below sets it to 'NBSP' (U+00A0) instead
     -- nbsp = '\xc2\xa0',
 }
+vim.cmd("FzfLua register_ui_select")
+

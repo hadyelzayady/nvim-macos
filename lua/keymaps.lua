@@ -49,6 +49,7 @@ keymap("n", "˚", "<Esc>:m .-2<CR>", opts)
 -- Insert --
 -- Press jk fast to enter
 keymap("i", "jk", "<ESC>", opts)
+-- keymap("i", "<ESC>", "<ESC>", opts)
 
 -- Visual --
 -- Stay in indent mode

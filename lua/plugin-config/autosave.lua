@@ -4,7 +4,7 @@ autosave.setup(
     {
         enabled = true,
         execution_message = "AutoSave: saved at " .. vim.fn.strftime("%H:%M:%S"),
-        events = { "InsertLeave", "TextChanged" }, -- "TextChanged"
+        events = { "TextChanged" }, -- "TextChanged", "InsertLeave"
         conditions = {
             exists = true,
             filename_is_not = {},
@@ -14,6 +14,6 @@ autosave.setup(
         write_all_buffers = false,
         on_off_commands = true,
         clean_command_line_interval = 0,
-        debounce_delay = 235
+        debounce_delay = 300
     }
 )
