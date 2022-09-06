@@ -29,6 +29,7 @@ return require('packer').startup(function()
         "TimUntersberger/neogit",
         requires = "nvim-lua/plenary.nvim",
     }
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
     use 'lewis6991/gitsigns.nvim'
 
     -- theme
