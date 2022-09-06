@@ -24,7 +24,17 @@ return require('packer').startup(function()
         run = ':TSUpdate'
     }
 
-    use 'Mofiqul/dracula.nvim' -- theme
+    ------------------- Git --------------
+    use {
+        "TimUntersberger/neogit",
+        requires = "nvim-lua/plenary.nvim",
+    }
+    use 'lewis6991/gitsigns.nvim'
+
+    -- theme
+    use {
+        "sainnhe/everforest",
+    }
 
     use { 'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons' } -- show buffer as tabs with fancy stuff like close icon and number of errors
 
@@ -32,7 +42,6 @@ return require('packer').startup(function()
 
     use "akinsho/toggleterm.nvim"
     use "nvim-lualine/lualine.nvim" -- statusline
-    use 'lewis6991/gitsigns.nvim'
     use { "dinhhuy258/vim-local-history", branch = "master", run = ':UpdateRemotePlugins' }
     use 'lewis6991/impatient.nvim' -- optimize starting vim
     use {
