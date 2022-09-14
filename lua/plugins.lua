@@ -13,7 +13,22 @@ return require('packer').startup(function()
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use { 'ms-jpq/coq_nvim', branch = 'coq' } -- autocompletions
+    -- Completion
+    use {
+        "ms-jpq/coq_nvim",
+        branch = "coq",
+        event = "InsertEnter",
+        opt = true,
+        run = ":COQdeps",
+        config = function()
+            require("plugin-config.coq").setup()
+        end,
+        requires = {
+            { "ms-jpq/coq.artifacts", branch = "artifacts" },
+            { "ms-jpq/coq.thirdparty", branch = "3p", module = "coq_3p" },
+        },
+        disable = true,
+    }
 
     use 'windwp/nvim-autopairs' -- auto close brackets, parentathesis,...
     use 'windwp/nvim-ts-autotag' --  auto close tags
@@ -27,6 +42,7 @@ return require('packer').startup(function()
     ------------------- Git --------------
     use {
         "TimUntersberger/neogit",
+        cmd = "Neogit",
         requires = "nvim-lua/plenary.nvim",
     }
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
@@ -39,17 +55,38 @@ return require('packer').startup(function()
 
     use { 'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons' } -- show buffer as tabs with fancy stuff like close icon and number of errors
 
-    use "folke/which-key.nvim"
+    use {
+        "folke/which-key.nvim",
+        config = function()
+            require("plugin-config.whichkey").setup()
+        end,
+    }
 
     use "akinsho/toggleterm.nvim"
-    use "nvim-lualine/lualine.nvim" -- statusline
+    -- Status line
+    use {
+        "nvim-lualine/lualine.nvim",
+        after = "nvim-treesitter",
+        config = function()
+            require("plugin-config.lualine").setup()
+        end,
+        requires = { "nvim-web-devicons" },
+    }
+    use {
+        "SmiteshP/nvim-gps",
+        requires = "nvim-treesitter/nvim-treesitter",
+        module = "nvim-gps",
+        config = function()
+            require("nvim-gps").setup()
+        end,
+    }
+
     use { "dinhhuy258/vim-local-history", branch = "master", run = ':UpdateRemotePlugins' }
     use 'lewis6991/impatient.nvim' -- optimize starting vim
     use {
         'nvim-telescope/telescope.nvim',
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
-    use { "nvim-telescope/telescope-file-browser.nvim" }
     use {
         -- file explorer
         'kyazdani42/nvim-tree.lua',
@@ -70,6 +107,18 @@ return require('packer').startup(function()
     use { 'ibhagwan/fzf-lua',
         -- optional for icon support
         requires = { 'kyazdani42/nvim-web-devicons' }
+    }
+
+    use {
+        "stevearc/dressing.nvim",
+        event = "BufEnter",
+        config = function()
+            require("dressing").setup {
+                select = {
+                    backend = { "telescope", "fzf", "builtin" },
+                },
+            }
+        end,
     }
     use 'folke/lsp-colors.nvim'
     use {
@@ -97,8 +146,26 @@ return require('packer').startup(function()
             require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
         end
     }
-    use "lukas-reineke/indent-blankline.nvim"
+
+    use {
+        "lukas-reineke/indent-blankline.nvim",
+        event = "BufReadPre",
+        config = function()
+            require("plugin-config.indentline").setup()
+        end,
+    }
+
     use 'simrat39/symbols-outline.nvim'
+
+    use {
+        "iamcco/markdown-preview.nvim",
+        run = function()
+            vim.fn["mkdp#util#install"]()
+        end,
+        ft = "markdown",
+        cmd = { "MarkdownPreview" },
+    }
+
     --  -- Simple plugins can be specified as strings
     --  use '9mm/vim-closer'
     --

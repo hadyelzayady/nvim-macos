@@ -1,9 +1,11 @@
-vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
-vim.opt.listchars:append("eol:↴")
+local M = {}
 
-require("indent_blankline").setup {
-    space_char_blankline = " ",
-    show_current_context = true,
-    show_current_context_start = true,
-}
+function M.setup()
+  local g = vim.g
+  g.indent_blankline_char = "┊"
+  g.indent_blankline_filetype_exclude = { "help", "packer" }
+  g.indent_blankline_buftype_exclude = { "terminal", "nofile" }
+  g.indent_blankline_show_trailing_blankline_indent = false
+end
+
+return M

@@ -27,6 +27,19 @@ vim.opt.linebreak=true                         -- do not break word when wrappin
 vim.opt.guifont = "JetBrains Mono:h17"               -- the font used in graphical neovim applications
 vim.opt.termguicolors = true
 vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("eol:↴")
+
+
+
+-- Highlight on yank
+vim.cmd [[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+  augroup end
+]]
+
 -- vim.opt.listchars = vim.opt.listchars + {
 --   eol = '⤶',
 --   space = '-',
@@ -42,4 +55,4 @@ vim.opt.list = true
 --vim.cmd "set whichwrap+=<,>,[,],h,l"
 --vim.cmd [[set iskeyword+=-]]
 --vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
-
+--

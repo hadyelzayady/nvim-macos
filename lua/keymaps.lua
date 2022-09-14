@@ -1,6 +1,6 @@
 local opts = { noremap = true, silent = true }
-
 local term_opts = { silent = true }
+local expr_opts = { noremap = true, expr = true, silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
@@ -40,6 +40,10 @@ keymap("n", "<S-h>", ":BufferLineCyclePrev<CR>", opts)
 keymap("n", "Ò", ":BufferLineMoveNext<CR>", opts)
 keymap("n", "Ó", ":BufferLineMovePrev<CR>", opts)
 
+-- Center search results
+keymap("n", "n", "nzz", opts)
+keymap("n", "N", "Nzz", opts)
+
 -- Move text up and down
 -- alt+ j
 keymap("n", "∆", "<Esc>:m .+1<CR>", opts) -- <Esc>:m .+1<CR>==gi -> move then go back to last insert position
@@ -62,6 +66,10 @@ keymap("v", "∆", ":m .+1<CR>==", opts)
 -- alt+k
 keymap("v", "˚", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
+
+-- Visual line wraps
+keymap("n", "k", "v:count == 0 ? 'gk' : 'k'", expr_opts)
+keymap("n", "j", "v:count == 0 ? 'gj' : 'j'", expr_opts)
 
 -- Visual Block --
 -- Move text up and down
