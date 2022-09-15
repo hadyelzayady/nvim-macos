@@ -118,64 +118,64 @@ function M.setup()
             },
         },
 
-        l = {
-            name = "LSP",
-            a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-            d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Diagnostics" },
-            w = {
-                "<cmd>TroubleToggle workspace_diagnostics<cr>",
-                "Workspace Diagnostics",
-            },
-            f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
-            F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
-            j = {
-                "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
-                "Next Diagnostic",
-            },
-            k = {
-                "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>",
-                "Prev Diagnostic",
-            },
-            c = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-            o = { "<cmd>SymbolsOutline<cr>", "Outline" },
-            q = { "<cmd>TroubleToggle loclist<cr>", "Loclist", },
-            r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-            R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
-            s = { "<cmd>FzfLua lsp_document_symbols<cr>", "Document Symbols" },
-            S = {
-                "<cmd>FzfLua lsp_workspace_symbols<cr>",
-                "Workspace Symbols",
-            },
-            -- t = { '<cmd>lua require("user.functions").toggle_diagnostics()<cr>', "Toggle Diagnostics" },
-            l = {
-                name = "Trouble List",
-                x = {
-                    "<cmd>TroubleToggle document_diagnostics<cr>",
-                    "Document Diagnostics",
-                },
-                w = {
-                    "<cmd>TroubleToggle workspace_diagnostics<cr>",
-                    "Workspace Diagnostics",
-                },
-                r = {
-                    "<cmd>TroubleToggle lsp_references<cr>",
-                    "References",
-                },
-                d = {
-                    "<cmd>TroubleToggle lsp_definitions<cr>",
-                    "Definitions",
-                },
-                t = {
-                    "<cmd>TroubleToggle lsp_type_definitions<cr>",
-                    "Type Definitions",
-                },
-                l = {
-                    "<cmd>TroubleToggle loclist<cr>",
-                    "Loclist",
-                },
-            },
-            -- l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-        },
+        -- l = {
+        --     name = "LSP",
+        --     a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
+        --     d = { "<cmd>TroubleToggle document_diagnostics<cr>", "Diagnostics" },
+        --     w = {
+        --         "<cmd>TroubleToggle workspace_diagnostics<cr>",
+        --         "Workspace Diagnostics",
+        --     },
+        --     f = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format" },
+        --     F = { "<cmd>LspToggleAutoFormat<cr>", "Toggle Autoformat" },
+        --     j = {
+        --         "<cmd>lua vim.diagnostic.goto_next({buffer=0})<CR>",
+        --         "Next Diagnostic",
+        --     },
+        --     k = {
+        --         "<cmd>lua vim.diagnostic.goto_prev({buffer=0})<cr>",
+        --         "Prev Diagnostic",
+        --     },
+        --     c = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+        --     o = { "<cmd>SymbolsOutline<cr>", "Outline" },
+        --     q = { "<cmd>TroubleToggle loclist<cr>", "Loclist", },
+        --     r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+        --     R = { "<cmd>TroubleToggle lsp_references<cr>", "References" },
+        --     s = { "<cmd>FzfLua lsp_document_symbols<cr>", "Document Symbols" },
+        --     S = {
+        --         "<cmd>FzfLua lsp_workspace_symbols<cr>",
+        --         "Workspace Symbols",
+        --     },
+        --     -- t = { '<cmd>lua require("user.functions").toggle_diagnostics()<cr>', "Toggle Diagnostics" },
+        --     l = {
+        --         name = "Trouble List",
+        --         x = {
+        --             "<cmd>TroubleToggle document_diagnostics<cr>",
+        --             "Document Diagnostics",
+        --         },
+        --         w = {
+        --             "<cmd>TroubleToggle workspace_diagnostics<cr>",
+        --             "Workspace Diagnostics",
+        --         },
+        --         r = {
+        --             "<cmd>TroubleToggle lsp_references<cr>",
+        --             "References",
+        --         },
+        --         d = {
+        --             "<cmd>TroubleToggle lsp_definitions<cr>",
+        --             "Definitions",
+        --         },
+        --         t = {
+        --             "<cmd>TroubleToggle lsp_type_definitions<cr>",
+        --             "Type Definitions",
+        --         },
+        --         l = {
+        --             "<cmd>TroubleToggle loclist<cr>",
+        --             "Loclist",
+        --         },
+        --     },
+        --     -- l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
+        -- },
         s = {
             name = "Search",
             f = { "<cmd>FzfLua files<cr>", "Files" },

@@ -3,8 +3,8 @@ if not status_ok then
     return
 end
 
-local ft_to_parser = require "nvim-treesitter.parsers".filetype_to_parsername
-ft_to_parser.motoko = "typescript"
+-- local ft_to_parser = require "nvim-treesitter.parsers".filetype_to_parsername
+-- ft_to_parser.motoko = "typescript"
 
 configs.setup({
     ensure_installed = "all", -- one of "all" or a list of languages
@@ -20,7 +20,7 @@ configs.setup({
     autopairs = {
         enable = true,
     },
-    indent = { enable = true}, --disable = { "python", "css" } },
+    indent = { enable = true }, --disable = { "python", "css" } },
     context_commentstring = {
         enable = true,
         enable_autocmd = false,
@@ -41,7 +41,7 @@ configs.setup({
         },
         -- disable = { "html" },
     },
-    playground = {
-        enable = true,
-    },
+    -- playground = {
+    --     enable = true,
+    -- },
 })

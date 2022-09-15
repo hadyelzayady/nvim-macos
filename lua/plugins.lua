@@ -2,16 +2,25 @@ return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
+    -- LSP
     use {
-        "williamboman/nvim-lsp-installer",
         "neovim/nvim-lspconfig",
+        opt = true,
+        event = "BufReadPre",
+        wants = { "nvim-lsp-installer", "lsp_signature.nvim", "coq_nvim" },
+        config = function()
+            require("lsp").setup()
+        end,
+        requires = {
+            "williamboman/nvim-lsp-installer",
+            "ray-x/lsp_signature.nvim",
+        },
     }
 
-
-    use {
-        'jose-elias-alvarez/null-ls.nvim',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
+    -- use {
+    --     'jose-elias-alvarez/null-ls.nvim',
+    --     requires = { { 'nvim-lua/plenary.nvim' } }
+    -- }
 
     -- Completion
     use {
@@ -27,7 +36,7 @@ return require('packer').startup(function()
             { "ms-jpq/coq.artifacts", branch = "artifacts" },
             { "ms-jpq/coq.thirdparty", branch = "3p", module = "coq_3p" },
         },
-        disable = true,
+        -- disable = true,
     }
 
     use 'windwp/nvim-autopairs' -- auto close brackets, parentathesis,...

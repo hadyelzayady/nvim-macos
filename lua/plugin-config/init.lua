@@ -1,5 +1,4 @@
 require "plugin-config.impatient"
-require "plugin-config.coq"
 require "plugin-config.treesetter"
 require "plugin-config.bufferline"
 require "plugin-config.whichkey"
