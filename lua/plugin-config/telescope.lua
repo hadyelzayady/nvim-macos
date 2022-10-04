@@ -4,4 +4,5 @@ if not status_ok then
 end
 
 telescope.load_extension('projects')
+telescope.load_extension("refactoring")
 -- telescope.load_extension('possession')

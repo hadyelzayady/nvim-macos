@@ -437,6 +437,7 @@ require 'fzf-lua'.setup {
     tags                = {
         prompt       = 'Tags❯ ',
         ctags_file   = "tags",
+        ctags_autogen = false,
         multiprocess = true,
         file_icons   = true,
         git_icons    = true,
@@ -455,6 +456,7 @@ require 'fzf-lua'.setup {
     btags               = {
         prompt       = 'BTags❯ ',
         ctags_file   = "tags",
+        ctags_autogen = false,
         multiprocess = true,
         file_icons   = true,
         git_icons    = true,
@@ -536,4 +538,3 @@ require 'fzf-lua'.setup {
     -- nbsp = '\xc2\xa0',
 }
 vim.cmd("FzfLua register_ui_select")
-

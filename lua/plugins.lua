@@ -5,24 +5,25 @@ return require('packer').startup(function()
     -- LSP
     use {
         "neovim/nvim-lspconfig",
-        opt = true,
-        event = "BufReadPre",
+        -- opt = true,
+        -- event = "BufReadPre",
         wants = { "nvim-lsp-installer", "lsp_signature.nvim", "coq_nvim" },
-        config = function()
-            require("lsp").setup()
-        end,
+        -- config = function()
+        --     require("lsp").setup()
+        -- end,
         requires = {
             "williamboman/nvim-lsp-installer",
             "ray-x/lsp_signature.nvim",
         },
     }
 
+    use { "mfussenegger/nvim-jdtls", ft = { "java" } }
     -- use {
     --     'jose-elias-alvarez/null-ls.nvim',
     --     requires = { { 'nvim-lua/plenary.nvim' } }
     -- }
 
-    -- Completion
+    --    Completion
     use {
         "ms-jpq/coq_nvim",
         branch = "coq",
@@ -38,16 +39,35 @@ return require('packer').startup(function()
         },
         -- disable = true,
     }
-
+    use {
+        "j-hui/fidget.nvim",
+        config = function()
+            require("fidget").setup {}
+        end, }
+    -- highlight referenced of word unser cursor
+    use 'RRethy/vim-illuminate'
     use 'windwp/nvim-autopairs' -- auto close brackets, parentathesis,...
     use 'windwp/nvim-ts-autotag' --  auto close tags
 
+    -- folding
+    use { 'kevinhwang91/nvim-ufo',
+        requires = 'kevinhwang91/promise-async',
+        config = function()
+            require("ufo").setup()
+        end
+    }
     use {
         'nvim-treesitter/nvim-treesitter',
         'p00f/nvim-ts-rainbow',
         run = ':TSUpdate'
     }
-
+    use {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" }
+        }
+    }
     ------------------- Git --------------
     use {
         "TimUntersberger/neogit",
@@ -125,6 +145,16 @@ return require('packer').startup(function()
             require("dressing").setup {
                 select = {
                     backend = { "telescope", "fzf", "builtin" },
+                    get_config = function(opts)
+                        if opts.kind == 'codeaction' then
+                            return {
+                                backend = 'builtin',
+                                builtin = {
+                                    relative = 'cursor',
+                                }
+                            }
+                        end
+                    end
                 },
             }
         end,
@@ -135,7 +165,7 @@ return require('packer').startup(function()
         requires = "kyazdani42/nvim-web-devicons",
     }
 
-    use "Pocco81/AutoSave.nvim"
+    use "Pocco81/auto-save.nvim"
 
     -- Start Screen
     use {
@@ -145,7 +175,6 @@ return require('packer').startup(function()
 
     use 'Shatur/neovim-session-manager'
 
-    use 'notjedi/nvim-rooter.lua'
     use "ahmedkhalf/project.nvim"
     use {
         'phaazon/hop.nvim',
@@ -174,6 +203,14 @@ return require('packer').startup(function()
         ft = "markdown",
         cmd = { "MarkdownPreview" },
     }
+    use 'chentoast/marks.nvim'
+    use {
+        "folke/zen-mode.nvim",
+        config = function()
+            require("plugin-config.zen-mode").setup()
+        end
+    }
+    use { "b0o/schemastore.nvim" }
 
     --  -- Simple plugins can be specified as strings
     --  use '9mm/vim-closer'

@@ -19,16 +19,19 @@ local function keymappings(client, bufnr)
     -- Whichkey
     local keymap_l = {
         l = {
-            name = "Code",
+            name = "Lsp",
             r = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
             a = { "<cmd>lua vim.lsp.buf.code_action()<CR>", "Code Action" },
             d = { "<cmd>lua vim.diagnostic.open_float()<CR>", "Line Diagnostics" },
             i = { "<cmd>LspInfo<CR>", "Lsp Info" },
+            R = { "<cmd>FzfLua lsp_references<cr>", "References (FzfLua)" },
+            L = { "<cmd>lua vim.lsp.codelens.refresh()<CR>", "Refresh CodeLens" },
+            l = { "<cmd>lua vim.lsp.codelens.run()<CR>", "Run CodeLens" },
         },
     }
-    if client.resolved_capabilities.document_formatting then
-        keymap_l.l.f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Document" }
-        keymap_l.l.F = { "<cmd>lua vim.lsp.formatexpr()<CR>", "Range Format Selected" }
+    if client.server_capabilities.documentFormattingProvider
+    then
+        keymap_l.l.f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format" }
     end
 
     local keymap_g = {
@@ -38,6 +41,7 @@ local function keymappings(client, bufnr)
         s = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
         I = { "<cmd>lua vim.lsp.buf.implementation()<CR>", "Goto Implementation" },
         t = { "<cmd>lua vim.lsp.buf.type_definition()<CR>", "Goto Type Definition" },
+        r = { "<cmd>Trouble lsp_references<CR>", "Goto References (Trouble)" },
     }
     whichkey.register(keymap_l, { buffer = bufnr, prefix = "<leader>" })
     whichkey.register(keymap_g, { buffer = bufnr, prefix = "g" })
